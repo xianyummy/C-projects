@@ -1,0 +1,31 @@
+#include <iostream>
+
+
+
+int main() {
+
+	int age = 21;
+	int year = 2023;
+	int days = 7.5;
+	// double
+	double price = 10.99;
+	double gpa = 2.5;
+	double temperature = 25.1;
+	char grade = 'A';
+	char initial = 'B';
+	std::cout << days << '\n';
+	std::cout << price;
+	std::cout << initial;
+	// boolean (true or false)
+	bool student = true;
+	bool power = true;
+	bool forsale = true;
+	std::string name = "Alan";
+	std::string day = "Friday";
+	std::string address = "123 Fake St.";
+	std::cout << name;
+
+	std::cout << "hello  " << name<<'\n';
+	std::cout << "Your are " << age << " years old";
+	return 0;
+}
