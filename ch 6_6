@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+bool primeQ(int n);
+int main() {
+	int k;
+	cin >> k;
+	if (bool(k) == 1) {
+		cout << "k值為質數";
+	}
+	else {
+		cout << "k值不是質數";
+	}
+	return 0;
+}
+
+bool primeQ(int n) {
+	int i;
+	for (i = 2;i <= n - 1;i++) {
+		if (n % i == 0) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+}
+
