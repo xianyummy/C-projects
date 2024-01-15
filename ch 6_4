@@ -1,0 +1,14 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int cub(int);
+int main() {
+	int k;
+	cin >> k;
+	cout << "k值的3次方為" << cub(k);
+	return 0;
+}
+
+int cub(int k) {
+	return k * k * k;
+}
