@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+void proverb(int);
+int main() {
+	int k;
+	cin >> k;
+	proverb(k);
+	return 0;
+}
+
+void proverb(int k) {
+	int i;
+	for (i = 1;i <= k;i++) {
+		cout << "Live and learn." << endl;
+	}
+}
