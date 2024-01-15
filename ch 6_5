@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+void mod(int, int);
+int main() {
+	int x, y;
+	cin >> x;
+	cin >> y;
+	mod(x, y);
+	return 0;
+}
+
+void mod(int x, int y) {
+	int the_remainder = x % y;
+	int the_quotient = x / y;
+	cout << "x除以y的商數為" << the_quotient << endl;
+	cout << "x除以y的餘數為" << the_remainder << endl;
+}
