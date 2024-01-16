@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cstdlib>
+#define MAX 5
+using namespace std;
+int main() {
+	double a[MAX];
+	int i = 0;
+	float sum = 0.0f;
+	cout << "請輸入五個浮點數" << endl;
+	for (i = 0;i < MAX;i++) {
+		cout << "Input number #" << i + 1 << ": ";
+		cin >> a[i];
+	}
+	for (i = 0;i < MAX;i++) {
+		sum += a[i];
+	}
+	cout << "Average of all is " << sum / MAX << endl;
+	return 0;
+}
