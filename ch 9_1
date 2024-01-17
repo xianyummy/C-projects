@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cstdlib>
+#include<iomanip>
+using namespace std;
+int main() {
+	int a=3, b = 5;
+	double c = 3.14;
+
+	cout << "a=" << a << ", sizeof(a)=" << sizeof(a);
+	cout << ", 位址為" << &a << endl;
+	cout << "b=" << b << ", sizeof(b)=" << sizeof(b);
+	cout << ", 位址為" << &b << endl;
+	cout << "a=" << a << ", sizeof(c)=" << sizeof(c);
+	cout << ", 位址為" << &c << endl;
+	return 0;
+}
