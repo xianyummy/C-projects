@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cstdlib>
+#include<iomanip>
+using namespace std;
+int main() {
+	short a = 3;
+	int b = 20;
+	double f = 2.365;
+
+	cout << "a=" << a << ", sizeof(a)=" << sizeof(a);
+	cout << ", &a=" << &a << endl;
+	cout << "b=" << b << ", sizeof(b)=" << sizeof(b);
+	cout << ", &b=" << &b << endl;
+	cout << "f=" << f << ", sizeof(f)=" << sizeof(f);
+	cout << ", &f=" << &f << endl;
+	return 0;
+}
