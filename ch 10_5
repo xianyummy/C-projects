@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+char* setstring(const char*);
+int main() {
+	char* ptr1, * ptr2, * temp;
+	ptr1 = setstring("Rome was not built in a day");
+	ptr2 = setstring("Knowledge is power");
+
+	cout << "before swap..." << endl;
+	cout << "ptr1=" << ptr1 << endl;
+	cout << "ptr2=" << ptr2 << endl;
+
+	temp = ptr1;
+	ptr1 = ptr2;
+	ptr2 = temp;
+
+	cout << endl << "after swap..." << endl;
+	cout << "ptr1=" << ptr1 << endl;
+	cout << "ptr2=" << ptr2 << endl;
+
+	delete[] ptr1;
+	delete[] ptr2;
+
+	return 0;
+}
+
+char* setstring(const char* text) {
+	char* ptr;
+	ptr = new char[strlen(text) + 1];
+	strcpy(ptr, text);
+	return ptr;
+}
