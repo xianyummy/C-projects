@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cstdlib>
+#include<iomanip>
+using namespace std;
+double agv(int*);
+int main() {
+	int i, a[10], * ptr = a;
+	for (i = 0; i < 10; i++) {
+		cout << "Input num#" << i + 1 << ": ";
+		cin >> *(ptr + i);
+	}
+	cout << "陣列的平均值為:" << agv(ptr) << endl;
+	return 0;
+}
+
+double agv(int* ptr) {
+	double sum = 0;
+	for (int i = 0; i < 10; i++) {
+		sum += *(ptr+i);
+	}
+	return sum / 10;
+}
