@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cstdlib>
+#include <iomanip>
+#include <string>
+using namespace std;
+struct mydata {
+	string id;
+	string name;
+	int score1;
+	int score2;
+	int score3;
+}student;
+int main() {
+	cout << "Student's id";
+	getline(cin, student.id);
+	cout << "Student's name";
+	getline(cin, student.name);
+	cout << "midterm grades";
+	cin >> student.score1;
+	cout << "finalterm grades";
+	cin >> student.score2;
+	cout << "average grades";
+	cin >> student.score3;
+	cout << "***OUTPUT***" << endl;
+	cout << student.id << endl;
+	cout << student.name << endl;
+	cout << "midterm is " << student.score1 << endl;
+	cout << "finalterm is " << student.score2 << endl;
+	cout << "average grades is " << student.score3 << endl;
+	cout << "semester grades is" << student.score1 * 0.3 + student.score2 * 0.3 + student.score3 * 0.4 << endl;
+
+	return 0;
+}
+
+
+
+
+
