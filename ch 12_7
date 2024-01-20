@@ -1,0 +1,29 @@
+#include <cstdlib>
+#include <iostream>
+#include <string>
+using namespace std;
+class cbox {
+public:
+	int length;
+	int width;
+	int height;
+	void volume(void) {
+		cout << "體積=" << length * width * height << endl;
+	}
+	void surfacearea(void) {
+		cout << "表面積=" << 2 * (length * width + length * height + width * height) << endl;
+	}
+};
+
+int main() {
+	cbox a;
+	a.height = 3;
+	a.width = 4;
+	a.length = 5;
+	cout << "長=" << a.length << endl;
+	cout << "寬=" << a.width << endl;
+	cout << "高=" << a.height << endl;
+	a.volume();
+	a.surfacearea();
+	return 0;
+}
