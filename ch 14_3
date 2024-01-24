@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+#include <string>
+using namespace std;
+class caaa {
+public:
+	caaa();
+	~caaa();
+};
+
+caaa::caaa() {
+	cout << "constructor called" << endl;
+}
+
+caaa::~caaa() {
+	cout << "destructor called" << endl;
+	system("pause");
+}
+
+int main() {
+	caaa obj;
+	system("pause");
+	return 0;
+}
