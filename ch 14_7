@@ -1,0 +1,35 @@
+#include <cstdlib>
+#include <iostream>
+#include <string>
+using namespace std;
+class cwin {
+private:
+	char id, * title;
+public:
+	void show(void) {
+		cout << "Window " << id << ": " << title << endl;
+	}
+	cwin(char, const char*);
+	~cwin();
+};
+
+cwin::cwin(char i = 'D', const char* text = "Default window") :id(i) {
+	title = new char[strlen(text) + 1];
+	strcpy(title, text);
+}
+cwin::~cwin() {
+	cout << "解構元被呼叫了，Win " << this->id <<"被銷毀了" << endl;
+	delete[] title;
+	system("pause");
+}
+
+int main() {
+	cwin win1('A', "Main window");
+	cwin win2('B');
+
+	win1.show();
+	win2.show();
+	cout << "sizeof(win1) = " << sizeof(win1) << endl;
+	cout << "sizeof(win2) = " << sizeof(win2) << endl;
+	return 0;
+}
