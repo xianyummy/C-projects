@@ -1,0 +1,31 @@
+#include <cstdlib>
+#include <iostream>
+#include <string>
+using namespace std;
+class cwin {
+private:
+	char id;
+	int width, height;
+public:
+	cwin(char i,int w,int h):id(i),width(w),height(h){}
+	int operator>(cwin& win);
+	int area(void) {
+		return width * height;
+	}
+};
+
+int cwin::operator>(cwin& win) {
+	return (this->area() > win.area());
+}
+
+int main() {
+	cwin win1('A', 70, 80);
+	cwin win2('B', 60, 90);
+	if (win1 > win2) {
+		cout << "win1 is larger than win2" << endl;
+	}
+	else {
+		cout << "win2 is larger than win1" << endl;
+	}
+	return 0;
+}
