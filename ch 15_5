@@ -1,0 +1,45 @@
+#include <cstdlib>
+#include <iostream>
+#include <string>
+using namespace std;
+class ctime {
+private:
+	int hour, min;
+	double sec;
+public:
+	ctime(int h,int m,double s):hour(h),min(m),sec(s){}
+	ctime(){}
+	void show_time() {
+		cout << hour << "hr " << min << "min " << sec << "sec " << endl;
+	}
+	double to_sec() {
+		return hour * 3600 + min * 60 + sec;
+	}
+	int operator>(ctime& t) {
+		return (this->to_sec() > t.to_sec());
+	}
+	int operator<(ctime& t) {
+		return (this->to_sec() < t.to_sec());
+	}
+
+	int main() {
+		ctime t1(4, 23, 56.3);
+		ctime t2(5, 45, 30.3);
+		t1.show_time();
+		t2.show_time();
+
+		if (t1 > t2) {
+			cout << "t1 is larger than t2" << endl;
+		}
+		else {
+			cout << "t2 is larger than t1" << endl;
+		}
+		if (t1 < t2) {
+			cout << "t1 is larger than t2" << endl;
+		}
+		else {
+			cout << "t2 is larger than t1" << endl;
+		}
+		return 0;
+	}
+};
