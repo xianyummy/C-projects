@@ -1,0 +1,40 @@
+#include <cstdlib>
+#include <iostream>
+#include <cstring>
+using namespace std;
+class ctime {
+private:
+	int hour, min;
+	double sec;
+public:
+	ctime(int h,int m,double s):hour(h),min(m),sec(s){}
+	ctime(){}
+
+	void show_time() {
+		cout << hour << "hr " << min << "min " << sec << "sec " << endl;
+	}
+	double to_sec() {
+		return hour * 3600 + min * 60 + sec;
+	}
+
+	ctime& operator=(const ctime& t) {
+		cout << "operator=() called" << endl;
+		this->hour = t.hour;
+		this->min = t.min;
+		this->sec = t.sec;
+	}
+};
+int main() {
+
+	class ctime t1(6, 14, 21.3);
+	class ctime t2, t3, t4;
+
+	t2 = t3 = t4 = t1;
+
+	t1.show_time();
+	t2.show_time();
+	t3.show_time();
+	t4.show_time();
+	system("pause");
+	return 0;
+}
