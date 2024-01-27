@@ -1,0 +1,44 @@
+#include <cstdlib>
+#include <iostream>
+#include <cstring>
+using namespace std;
+class cwin {
+private:
+	char id;
+	int width, height;
+public:
+	cwin(char i = 'D', int w = 10, int h = 10) :id(i), width(w), height(h) {
+		cout << "cwin()建構元被呼叫了..." << endl;
+	}
+	void show_member(void);
+};
+void cwin::show_member(void) {
+	cout << "Window " << id << ": ";
+	cout << "width = " << width << ", height = " << height << endl;
+}
+
+class ctextwin : public cwin {
+private:
+	char text[20];
+public:
+	ctextwin(char* tx) {
+		cout << "ctextwin()建構元被呼叫了..." << endl;
+		strcpy(text, tx);
+	}
+	void show_text();
+};
+void ctextwin::show_text() {
+	cout << "text = " << text << endl;
+}
+int main() {
+	class cwin win('A', 50, 60);
+	ctextwin txt("Hello C++");
+
+	win.show_member();
+	txt.show_member();
+	txt.show_text();
+
+	cout << "win 物件占了 " << sizeof(win) << " bytes" << endl;
+	cout << "txt 物件佔了 " << sizeof(txt) << " bytes" << endl;
+	return 0;
+}
