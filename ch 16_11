@@ -1,0 +1,25 @@
+#include <cstdlib>
+#include <iostream>
+#include <cstring>
+using namespace std;
+class caaa {
+protected:
+	int num;
+public:
+	caaa() {
+		num = 5;
+	}
+	void show() {
+		cout << "num = " << num << endl;
+	}
+};
+
+class cbbb : public caaa {
+};
+int main() {
+	cbbb b;
+	b.show();
+
+	system("pause");
+	return 0;
+}
