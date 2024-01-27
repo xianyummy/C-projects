@@ -1,0 +1,28 @@
+#include <cstdlib>
+#include <iostream>
+#include <cstring>
+using namespace std;
+class caaa {
+public:
+	int num1, num2;
+};
+
+class cbbb :public caaa {
+public:
+	void set_num(int a, int b) {
+		num1 = a;
+		num2 = b;
+	}
+	void show() {
+		cout << "num1 = " << num1 << endl;
+		cout << "num2 = " << num2 << endl;
+	}
+};
+
+int main(){
+	cbbb obj;
+
+	obj.set_num(10, 20);
+	obj.show();
+	return 0;
+}
