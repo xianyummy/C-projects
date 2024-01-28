@@ -1,0 +1,45 @@
+#include <cstdlib>
+#include <iostream>
+#include <cstring>
+using namespace std;
+class cwin {
+protected:
+	char id;
+	int width, height;
+public:
+	cwin(char i = 'D', int w = 10, int h  = 10) {
+		id = i;
+		width = w;
+		height = h;
+	}
+	void show_area() {
+		cout << "window " << id << ", area = " << area() << endl;
+	}
+	virtual int area() {
+		return width * height;
+	}
+};
+
+class cminiwin :public cwin {
+public:
+	cminiwin(char i,int w,int h):cwin(i,w,h){}
+
+	virtual int area() {
+		return (int)(0.8 * height * width);
+	}
+};
+
+int main() {
+	cwin win('A', 70, 80);
+	cminiwin my_win('B', 50, 60);
+
+	cwin* ptr = NULL;
+
+	ptr = &win;
+	cout << "win a: " << ptr->area() << endl;
+	
+	ptr = &my_win;
+	cout << "win m: " << ptr->area() << endl;
+	return 0;
+
+}
