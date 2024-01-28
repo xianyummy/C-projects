@@ -1,0 +1,53 @@
+#include <cstdlib>
+#include <iostream>
+#include <cstring>
+using namespace std;
+class cshape {
+public:
+	virtual int area() = 0;
+
+	void show_area() {
+		cout << "area = " << area() << endl;
+	}
+};
+
+class cwin : public cshape {
+protected:
+	int width, height;
+public:
+	cwin(int w = 10, int h = 10) {
+		width = w;
+		height = h;
+	}
+	virtual int area() {
+		return width * height;
+	}
+
+	void show_area() {
+		cout << "cwin物件的面積 = " << area() << endl;
+	}
+};
+
+class ccirwin : public cshape {
+protected:
+	int radius;
+public:
+	ccirwin(int r = 10) {
+		radius = r;
+	}
+	virtual int area() {
+		return (int)(3.14 * radius * radius);
+	}
+	void show_area() {
+		cout << "ccirwin物件的面積 = " << area() << endl;
+	}
+};
+
+int main() {
+	cwin win1(50, 60);
+	ccirwin win2(100);
+
+	win1.show_area();
+	win2.show_area();
+	return 0;
+}
