@@ -1,0 +1,32 @@
+#include <cstdlib>
+#include <iostream>
+#include <cstring>
+using namespace std;
+class cmath {
+public:
+	void show() {
+		cout << "ans = " << compute() << endl;
+	}
+	virtual int compute() = 0;
+};
+
+class cadd :public cmath {
+public:
+	int num1, num2;
+	
+	cadd(int m,int n):num1(m),num2(n){}
+
+	int compute() {
+		return num1 + num2;
+	}
+	void show() {
+		cout << "add(" << num1 << "," << num2 << ")= ";
+		cout << compute() << endl;
+	}
+};
+
+int main() {
+	cadd a1(2, 3);
+	a1.show();
+	return 0;
+}
